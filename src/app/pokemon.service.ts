@@ -6,7 +6,7 @@ import { PokemonClient, Pokemon } from 'pokenode-ts';
 })
 export class PokemonService {
   constructor() {}
-  pokedex: Pokemon[] = [];
+  pokemons: Pokemon[] = [];
   getPokedex(): void {
     const api = new PokemonClient();
     api
@@ -22,8 +22,8 @@ export class PokemonService {
     fetch(pokemonUrl)
       .then((res) => res.json())
       .then((data: Pokemon) => {
-        this.pokedex.push(data);
-        this.pokedex.sort((a, b) => (a.id > b.id ? 1 : -1));
+        this.pokemons.push(data);
+        this.pokemons.sort((a, b) => (a.id > b.id ? 1 : -1));
       });
   }
 }
