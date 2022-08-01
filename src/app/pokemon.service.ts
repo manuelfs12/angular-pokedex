@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { NamedAPIResource, PokemonClient, Pokemon } from 'pokenode-ts';
+import { PokemonClient, Pokemon } from 'pokenode-ts';
 
 @Injectable({
   providedIn: 'root',
@@ -7,7 +7,6 @@ import { NamedAPIResource, PokemonClient, Pokemon } from 'pokenode-ts';
 export class PokemonService {
   constructor() {}
   pokedex: Pokemon[] = [];
-  pokemonList: NamedAPIResource[] = [];
   getPokedex(): void {
     const api = new PokemonClient();
     api
