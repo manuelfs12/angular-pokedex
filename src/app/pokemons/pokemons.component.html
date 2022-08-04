@@ -2,7 +2,7 @@
   <li class="mx-auto list-none" *ngFor="let pokemon of pokemons">
     <img [src]="pokemon.sprites.front_default" alt="" />
     <h3 class="font-bold text-center">{{ pokemon.id }} {{ pokemon.name | titlecase }}</h3>
-    <span class="px-1">{{ pokemon.types[0].type.name | titlecase }}</span>
-    <span class="px-1" *ngIf="pokemon.types[1]">{{ pokemon.types[1].type.name | titlecase }}</span>
+    <app-pokemon-types [pokemonType]="pokemon.types[0].type.name"></app-pokemon-types>
+    <app-pokemon-types *ngIf="pokemon.types[1]" [pokemonType]="pokemon.types[1].type.name"></app-pokemon-types>
   </li>
 </section>
