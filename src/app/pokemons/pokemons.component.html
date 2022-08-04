@@ -1,4 +1,6 @@
-<li *ngFor="let pokemon of pokemons">
-  <img [src]="pokemon.sprites.front_default" alt="">
-  <h3>{{pokemon.id}} {{pokemon.name | titlecase}}</h3>
-</li>
+<section class="container mx-auto grid grid-cols-4 gap-4">
+  <li class="mx-auto list-none" *ngFor="let pokemon of pokemons">
+    <img [src]="pokemon.sprites.front_default" alt="">
+    <h3 class="font-bold text-center">{{pokemon.id}} {{pokemon.name | titlecase}}</h3>
+  </li>
+</section>
