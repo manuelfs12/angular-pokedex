@@ -1,7 +1,7 @@
 <section class="container mx-auto grid grid-cols-4 gap-4">
   <li class="mx-auto list-none" *ngFor="let pokemon of pokemons">
-    <img [src]="pokemon.sprites.front_default" alt="" />
-    <h3 class="font-bold text-center">{{ pokemon.id }} {{ pokemon.name | titlecase }}</h3>
+    <img class="mx-auto" [src]="pokemon.sprites.front_default" alt="" />
+    <h3 class="font-bold">{{ pokemon.id }} {{ pokemon.name | titlecase }}</h3>
     <app-pokemon-types [pokemonType]="pokemon.types[0].type.name"></app-pokemon-types>
     <app-pokemon-types *ngIf="pokemon.types[1]" [pokemonType]="pokemon.types[1].type.name"></app-pokemon-types>
   </li>
