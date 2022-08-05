@@ -1,3 +1,7 @@
+<nav>
+  <button class="" (click)="getPokedex(0, 151)">Kanto</button>
+  <button (click)="getPokedex(151, 100)">Johto</button>
+</nav>
 <section class="container mx-auto grid grid-cols-4 gap-4">
   <li class="mx-auto list-none" *ngFor="let pokemon of pokemons">
     <img class="mx-auto" [src]="pokemon.sprites.front_default" alt="" />

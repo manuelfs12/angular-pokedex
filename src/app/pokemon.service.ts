@@ -7,10 +7,11 @@ import { PokemonClient, Pokemon } from 'pokenode-ts';
 export class PokemonService {
   constructor() {}
   pokemons: Pokemon[] = [];
-  getPokedex(): void {
+  getPokedex(offset: number, limit: number): void {
+    this.pokemons = [];
     const api = new PokemonClient();
     api
-      .listPokemons(0, 151)
+      .listPokemons(offset, limit)
       .then((data) => {
         data.results.forEach((pokemon) => {
           this.getPokemonUrl(pokemon.url);
