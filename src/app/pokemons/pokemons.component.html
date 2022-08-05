@@ -1,10 +1,10 @@
-<nav class="container mx-auto text-center">
+<nav class="container mx-auto my-3 text-center">
   <h2 class="my-2 text-2xl text-center">Select Region</h2>
   <button class="mx-0.5 px-2 py-0.5 bg-red-800 text-white rounded" (click)="getPokedex(0, 151)">Kanto</button>
   <button class="mx-0.5 px-2 py-0.5 bg-yellow-600 text-white rounded" (click)="getPokedex(151, 100)">Johto</button>
   <button class="mx-0.5 px-2 py-0.5 bg-green-600 text-white rounded" (click)="getPokedex(251, 135)">Hoenn</button>
 </nav>
-<section class="container mx-auto grid grid-cols-4 gap-4">
+<section class="container mx-auto my-3 grid grid-cols-4 gap-4">
   <li class="mx-auto list-none" *ngFor="let pokemon of pokemons">
     <img class="mx-auto" [src]="pokemon.sprites.front_default" alt="" />
     <h3 class="font-bold">{{ pokemon.id }} {{ pokemon.name | titlecase }}</h3>
