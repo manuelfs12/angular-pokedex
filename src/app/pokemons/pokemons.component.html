@@ -4,7 +4,7 @@
   <button class="mx-0.5 px-2 py-0.5 bg-yellow-600 text-white rounded" (click)="getPokedex(151, 100)">Johto</button>
   <button class="mx-0.5 px-2 py-0.5 bg-green-600 text-white rounded" (click)="getPokedex(251, 135)">Hoenn</button>
 </nav>
-<section class="container mx-auto my-3 grid grid-cols-4 gap-4">
+<section class="container mx-auto my-3 grid xl:grid-cols-4 md:grid-cols-2 xl:gap-4 md:gap-2">
   <li class="mx-auto list-none" *ngFor="let pokemon of pokemons">
     <img class="mx-auto" [src]="pokemon.sprites.front_default" alt="" />
     <h3 class="font-bold">{{ pokemon.id }} {{ pokemon.name | titlecase }}</h3>
