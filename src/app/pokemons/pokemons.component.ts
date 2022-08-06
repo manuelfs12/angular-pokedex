@@ -10,7 +10,9 @@ import { PokemonService } from '../pokemon.service';
 export class PokemonsComponent implements OnInit {
   constructor(private pokemonService: PokemonService) {}
   pokemons: Pokemon[] = [];
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getPokedex(0, 151);
+  }
   getPokedex(offset: number, limit: number) {
     this.pokemonService.getPokedex(offset, limit);
     this.pokemons = this.pokemonService.pokemons;
