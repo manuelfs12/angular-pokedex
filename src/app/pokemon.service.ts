@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { PokemonClient, Pokemon } from 'pokenode-ts';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -26,5 +27,9 @@ export class PokemonService {
         this.pokemons.push(data);
         this.pokemons.sort((a, b) => (a.id > b.id ? 1 : -1));
       });
+  }
+  getPokemon(name: string): Observable<Pokemon | undefined> {
+    const pokemon = this.pokemons.find((pokemon) => pokemon.name === name);
+    return of(pokemon);
   }
 }
