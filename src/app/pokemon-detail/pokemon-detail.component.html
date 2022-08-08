@@ -1,4 +1,5 @@
 <section class="container mx-auto my-3">
+  <button class="hover:text-blue-900 p-2 rounded" (click)="goBack()"><-Go Back</button>
   <img [src]="pokemon?.sprites?.front_default" alt="">
   <h3 class="font-bold">{{pokemon!.id}} {{pokemon!.name | titlecase}}</h3>
   <app-pokemon-types [pokemonType]="pokemon!.types[0].type.name"></app-pokemon-types>
