@@ -1,4 +1,9 @@
 <section class="container mx-auto my-3">
   <img [src]="pokemon?.sprites?.front_default" alt="">
-  <h3>{{pokemon?.id}} {{pokemon?.name | titlecase}}</h3>
+  <h3 class="font-bold">{{pokemon!.id}} {{pokemon!.name | titlecase}}</h3>
+  <app-pokemon-types [pokemonType]="pokemon!.types[0].type.name"></app-pokemon-types>
+  <app-pokemon-types *ngIf="pokemon!.types[1]" [pokemonType]="pokemon!.types[1].type.name"></app-pokemon-types>
+  <p>Height: {{pokemon!.height}} dm</p>
+  <p>Weight: {{pokemon!.weight}} hg</p>
+  <p>Ability: {{pokemon!.abilities[0].ability.name | titlecase}}</p>
 </section>
